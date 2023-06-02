@@ -1,7 +1,9 @@
 <template>
-  <div class="graph-panel" ref="graphPanel"></div>
-  <div v-if="loading" class="loading-container">
-    <Loading class="loading" />
+  <div class="w-full h-full">
+    <div ref="graphPanel"></div>
+    <div v-if="loading" class="w-full h-full z-50 bg-slate-400 absolute left-0 top-0 opacity-60 flex items-center">
+      <Loading />
+    </div>
   </div>
 </template>
 
@@ -144,26 +146,3 @@ onMounted(() => {
   initGraph();
 });
 </script>
-
-<style scoped>
-.graph-panel {
-  overflow: hidden;
-}
-
-.loading-container {
-  width: 100%;
-  height: 100%;
-  background-color: gray;
-  z-index: 100;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.6;
-  display: flex;
-  align-items: center;
-}
-
-.loading {
-  display: block;
-}
-</style>
